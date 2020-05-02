@@ -1,14 +1,16 @@
 import os
 import argparse
 
-from src.utilities import input_reader
+import src.utilities as utilities
 from src.models.kmeans import KMeans
 
 def run(input_fn, output_fn, k):
-    dataset = input_reader(input_fn)
+    dataset = utilities.input_reader(input_fn)
     model = KMeans(dataset, k)
     model.fit()
     print("Computed clusters: {}".format(model.clusters))
+    utilities.save(model.clusters, output_fn)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run clustering for vecorized data',
