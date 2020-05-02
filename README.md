@@ -6,7 +6,7 @@ K-Means
 
 ## General description
  
-This project is a Python implementation of k-means clustering algorithm.
+This project is a Python implementation of k-means clustering algorithm for vectorized input
 
 ## Requirements
 
@@ -23,7 +23,7 @@ You should setup the conda environment (i.e. kmeans) using the environment.yml f
 
 ## Input
 
-A list of points in two-dimensional space where each point is represented by a latitude/longitude pair.
+A list of points in an n-dimensional space.
 
 ## Output
 
@@ -31,23 +31,14 @@ The clusters of points.  By default we stores the computed clusters into a csv f
 
 ## How to run:
 
-`python -m src.run --input YOUR_LOC_FILE --clusters CLUSTERS_NO`
+`python -m src.run --input YOUR_DATA --clusters CLUSTERS_NO`
 
-Note that the runner expects the location file be in `data` folder.
+Note that the runner expects the file to be in `data` folder.
 
 ## Run tests
 
 `python -m pytest tests/`
 
-## Technical details
-
-This project is an implementation of k-means algorithm. It starts with a random point and then chooses k-1 other points as the farthest from the previous ones successively. It uses these k points as cluster centroids and then joins each point of the input to the cluster with the closest centroid.
-
-Next, it recomputes the new centroids by calculating the means of obtained clusters and repeats the first step again by finding which cluster each point belongs to.
-
-The program repeats these two steps until the cluster centroids converge and do not change anymore. See the following link to read more about this project and see some real examples of running k-means algorithm:
-
-[K-Means algorithm description](http://www.kazemjahanbakhsh.com/codes/k-means.html)
 
 # To deactivate the conda environment:
 
