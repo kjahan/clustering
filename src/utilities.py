@@ -20,6 +20,9 @@ def input_reader(filename):
 	return df.to_numpy()
 
 def save(clusters_assignment, filename="output.csv"):
+    """
+    Taking a cluster assignment Dict and storing in a CSV file.
+    """
     if not clusters_assignment:
         return
     cluster_ids = list(clusters_assignment.keys())

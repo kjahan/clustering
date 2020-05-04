@@ -36,6 +36,10 @@ The clusters of points.  By default we stores the computed clusters into a csv f
 Note that the runner expects the input dataset file to be in `data` folder.
 
 
+## Run tests
+
+`python -m pytest tests/`
+
 # To deactivate the conda environment:
 
 `conda deactivate`
